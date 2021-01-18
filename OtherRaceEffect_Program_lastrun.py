@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2020.2.10),
-    on Sun Jan 17 21:16:31 2021
+    on Mon Jan 18 10:16:27 2021
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -82,26 +82,16 @@ defaultKeyboard = keyboard.Keyboard()
 
 # Initialize components for Routine "Welcome"
 WelcomeClock = core.Clock()
-thisExp=psychoJS.experiment;
-win=psychoJS.window;
-event=psychoJS.eventManager;
-Array.prototype.append = [].push;
-kb = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true}); 
-
-
-function random_character() {
-    var chars = "ABC";
-    return chars.substr( Math.floor(Math.random() * 3), 1);
-}
-condition = random_character();
-
 Welcome_Text = visual.TextStim(win=win, name='Welcome_Text',
     text='Welcome to the experiment!',
     font='Arial',
     units='cm', pos=(0, 4), height=1.5, wrapWidth=40, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
-    depth=-1.0);
+    depth=0.0);
+chars = ["A","B","C"]
+shuffle(chars)
+condition = chars[0]
 
 # Initialize components for Routine "Task_Instructions"
 Task_InstructionsClock = core.Clock()
@@ -195,7 +185,7 @@ B2_Start_Text = visual.TextStim(win=win, name='B2_Start_Text',
     units='cm', pos=(0, 4.5), height=1, wrapWidth=35, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
-    depth=-2.0);
+    depth=-1.0);
 B2_Start_Response = keyboard.Keyboard()
 
 # Initialize components for Routine "B2_Study"
@@ -651,7 +641,7 @@ for thisBlock1 in Block1:
     # set up handler to look after randomisation of conditions etc
     B1_Trial = data.TrialHandler(nReps=1, method='random', 
         extraInfo=expInfo, originPath=-1,
-        trialList=data.importConditions(B1list),
+        trialList=data.importConditions('B1_' + condition + '.xlsx'),
         seed=None, name='B1_Trial')
     thisExp.addLoop(B1_Trial)  # add the loop to the experiment
     thisB1_Trial = B1_Trial.trialList[0]  # so we can initialise stimuli with some values
@@ -977,19 +967,6 @@ for thisBlock2 in Block2:
     # ------Prepare to start Routine "B2_Start"-------
     continueRoutine = True
     # update component parameters for each repeat
-    if Block2.thisN==0:
-    #now I'm setting the specific list. See below
-    
-    ## importing the excel files for each format associated with block 2
-      if format==1:
-        B2list="B2_F1.xlsx"
-      elif format==2:
-        B2list="B2_F2.xlsx"
-      elif format==3:
-        B2list="B2_F3.xlsx"
-    
-    Word="Dummy word"
-    
     B2_Start_Text.alignText='left'
     B2_Start_Response.keys = []
     B2_Start_Response.rt = []
@@ -1086,7 +1063,7 @@ for thisBlock2 in Block2:
     # set up handler to look after randomisation of conditions etc
     B2_Trial = data.TrialHandler(nReps=1, method='random', 
         extraInfo=expInfo, originPath=-1,
-        trialList=data.importConditions(B2list),
+        trialList=data.importConditions('B2_' + condition + '.xlsx'),
         seed=None, name='B2_Trial')
     thisExp.addLoop(B2_Trial)  # add the loop to the experiment
     thisB2_Trial = B2_Trial.trialList[0]  # so we can initialise stimuli with some values

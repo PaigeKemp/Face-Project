@@ -60,23 +60,6 @@
       </TextComponent>
     </Routine>
     <Routine name="Welcome">
-      <CodeComponent name="code_JS">
-        <Param name="Before Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Before JS Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Experiment" updates="constant" val="thisExp=psychoJS.experiment;&amp;#10;win=psychoJS.window;&amp;#10;event=psychoJS.eventManager;&amp;#10;Array.prototype.append = [].push;&amp;#10;kb = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true}); &amp;#10;&amp;#10;&amp;#10;function random_character() {&amp;#10;    var chars = &quot;ABC&quot;;&amp;#10;    return chars.substr( Math.floor(Math.random() * 3), 1);&amp;#10;}&amp;#10;condition = random_character();&amp;#10;" valType="extendedCode"/>
-        <Param name="Begin JS Experiment" updates="constant" val="function random_character() {&amp;#10;    var chars = &quot;ABC&quot;;&amp;#10;    return chars.substr( Math.floor(Math.random() * 3), 1);&amp;#10;}&amp;#10;condition = random_character();&amp;#10;" valType="extendedCode"/>
-        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Code Type" updates="None" val="JS" valType="str"/>
-        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
-        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="disabled" updates="None" val="False" valType="bool"/>
-        <Param name="name" updates="None" val="code_JS" valType="code"/>
-      </CodeComponent>
       <TextComponent name="Welcome_Text">
         <Param name="color" updates="constant" val="white" valType="str"/>
         <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
@@ -101,16 +84,14 @@
         <Param name="units" updates="None" val="cm" valType="str"/>
         <Param name="wrapWidth" updates="constant" val="40" valType="code"/>
       </TextComponent>
-    </Routine>
-    <Routine name="B2_Start">
-      <CodeComponent name="B2_Code">
+      <CodeComponent name="JS_code">
         <Param name="Before Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Before JS Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin JS Routine" updates="constant" val="if ((Block2.thisN === 0)) {&amp;#10;    if ((format === 1)) {&amp;#10;        B2list = &quot;B2_F1.xlsx&quot;;&amp;#10;    } else {&amp;#10;        if ((format === 2)) {&amp;#10;            B2list = &quot;B2_F2.xlsx&quot;;&amp;#10;        } else {&amp;#10;            if ((format === 3)) {&amp;#10;                B2list = &quot;B2_F3.xlsx&quot;;&amp;#10;            }&amp;#10;        }&amp;#10;    }&amp;#10;}&amp;#10;Word = &quot;Dummy word&quot;;&amp;#10;" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="if Block2.thisN==0:&amp;#10;#now I'm setting the specific list. See below&amp;#10;&amp;#10;## importing the excel files for each format associated with block 2&amp;#10;  if format==1:&amp;#10;    B2list=&quot;B2_F1.xlsx&quot;&amp;#10;  elif format==2:&amp;#10;    B2list=&quot;B2_F2.xlsx&quot;&amp;#10;  elif format==3:&amp;#10;    B2list=&quot;B2_F3.xlsx&quot;&amp;#10;&amp;#10;Word=&quot;Dummy word&quot;&amp;#10;" valType="extendedCode"/>
-        <Param name="Code Type" updates="None" val="Auto-&gt;JS" valType="str"/>
+        <Param name="Begin Experiment" updates="constant" val="chars = [&quot;A&quot;,&quot;B&quot;,&quot;C&quot;]&amp;#10;shuffle(chars)&amp;#10;condition = chars[0]" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="chars = [&quot;A&quot;, &quot;B&quot;,&quot;C&quot;];&amp;#10;shuffle(chars);&amp;#10;condition = chars[0];&amp;#10;&amp;#10;current_format = chars.pop()&amp;#10;Cond_Loop.addData(‘Condition_Chosen’, current_format)" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="JS" valType="str"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
@@ -118,8 +99,10 @@
         <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
         <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
         <Param name="disabled" updates="None" val="False" valType="bool"/>
-        <Param name="name" updates="None" val="B2_Code" valType="code"/>
+        <Param name="name" updates="None" val="JS_code" valType="code"/>
       </CodeComponent>
+    </Routine>
+    <Routine name="B2_Start">
       <CodeComponent name="B2_Start_Text_Code">
         <Param name="Before Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Before JS Experiment" updates="constant" val="" valType="extendedCode"/>
@@ -1142,7 +1125,7 @@
     <LoopInitiator loopType="TrialHandler" name="B1_Trial">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
       <Param name="conditions" updates="None" val="None" valType="str"/>
-      <Param name="conditionsFile" updates="None" val="$B1list" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="$'B1_' + condition + '.xlsx'" valType="str"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>
@@ -1169,7 +1152,7 @@
     <LoopInitiator loopType="TrialHandler" name="B2_Trial">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
       <Param name="conditions" updates="None" val="None" valType="str"/>
-      <Param name="conditionsFile" updates="None" val="$B2list" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="$'B2_' + condition + '.xlsx'" valType="str"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>
