@@ -60,6 +60,23 @@
       </TextComponent>
     </Routine>
     <Routine name="Welcome">
+      <CodeComponent name="code_JS">
+        <Param name="Before Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Before JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Experiment" updates="constant" val="thisExp&amp;#10;win&amp;#10;event.clearEvents()" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="thisExp = psychoJS.experiment;&amp;#10;win=psychoJS.window;&amp;#10;event=psychoJS.eventManager;&amp;#10;webbrowser=window;&amp;#10;&amp;#10;" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="JS" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="thisExp.addData('Condition_Chosen', condition)" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="code_JS" valType="code"/>
+      </CodeComponent>
       <TextComponent name="Welcome_Text">
         <Param name="color" updates="constant" val="white" valType="str"/>
         <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
@@ -84,22 +101,22 @@
         <Param name="units" updates="None" val="cm" valType="str"/>
         <Param name="wrapWidth" updates="constant" val="40" valType="code"/>
       </TextComponent>
-      <CodeComponent name="JS_code">
+      <CodeComponent name="code">
         <Param name="Before Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Before JS Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Experiment" updates="constant" val="chars = [&quot;A&quot;,&quot;B&quot;,&quot;C&quot;]&amp;#10;shuffle(chars)&amp;#10;condition = chars[0]" valType="extendedCode"/>
-        <Param name="Begin JS Experiment" updates="constant" val="chars = [&quot;A&quot;, &quot;B&quot;,&quot;C&quot;];&amp;#10;shuffle(chars);&amp;#10;condition = chars[0];&amp;#10;&amp;#10;current_format = chars.pop()&amp;#10;Cond_Loop.addData(‘Condition_Chosen’, current_format)" valType="extendedCode"/>
-        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="chars = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;];&amp;#10;shuffle(chars);&amp;#10;condition = chars[0];&amp;#10;" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="chars = [&quot;A&quot;, &quot;B&quot;,&quot;C&quot;];&amp;#10;shuffle(chars);&amp;#10;condition = chars[0];" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="JS" valType="str"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="thisExp.addData('Condition_Chosen', condition)" valType="extendedCode"/>
         <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
         <Param name="disabled" updates="None" val="False" valType="bool"/>
-        <Param name="name" updates="None" val="JS_code" valType="code"/>
+        <Param name="name" updates="None" val="code" valType="code"/>
       </CodeComponent>
     </Routine>
     <Routine name="B2_Start">
